@@ -5,7 +5,7 @@ import wikipedia
 import webbrowser
 import smtplib
 import pyjokes
-import random
+import random 
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -43,8 +43,8 @@ def sendEmail(to,content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('arora.romil27@gmail.com', 'spydermail56')
-    server.sendmail('arora.romil27@gmail.com',to,content)
+    server.login('YOUR EMAIL', 'PASSWORD')
+    server.sendmail('YOUR EMAIL',to,content)
     server.close()
 
 def play_game():
@@ -100,7 +100,7 @@ if __name__ == "__main__":
             try:
                 speak("What should i say to romil?")
                 content = takeCommand()
-                to = "rokingromil@gmail.com"
+                to = "RECIVER EMAIL"
                 sendEmail(to, content)
                 speak('Email has been sent!')
             except Exception as e:
